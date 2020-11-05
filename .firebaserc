@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "clientpanelprod-8f58a": {
+      "hosting": {
+        "clientpanel": [
+          "clientpanelprod-8f58a"
+        ]
+      }
+    }
+  }
+}
