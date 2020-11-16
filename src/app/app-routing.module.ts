@@ -12,6 +12,7 @@ import { AddClientComponent } from './components/add-client/add-client.component
 import { EditClientComponent } from './components/edit-client/edit-client.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DetailRestaurantsComponent } from './components/restaurants/components/detail-restaurants/detail-restaurants.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 const routes: Routes = [
@@ -23,6 +24,8 @@ const routes: Routes = [
   {path: 'client/edit/:id', component: EditClientComponent, canActivate: [AuthGuard]},
   {path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuard]},
   {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
+  // restaurants
+  {path: 'restaurants/:id', component: DetailRestaurantsComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundComponent},
 ];
 
