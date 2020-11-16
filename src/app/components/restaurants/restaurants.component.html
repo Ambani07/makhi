@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2><i class="fa fa-pizza-slice"></i>Restaurants</h2>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Delivery</th>
+      <th>User</th>
+      <th>Created At</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let restaurant of rataurants">
+      <td>{{restaurant.name}}</td>
+      <td>{{restaurant.phone}}</td>
+      <td>{{restaurant.email}}</td>
+      <td>{{restaurant.address}}</td>
+      <td>{{restaurant.delivery}}</td>
+      <td>{{restaurant.user}}</td>
+      <td>{{restaurant.created_at}}</td>
+      <td><a routerLink="restaurants/{{ restaurant.id }}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr/>

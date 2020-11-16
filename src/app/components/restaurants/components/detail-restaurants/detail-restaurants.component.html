@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-6">
+        <a routerLink="/" class="btn btn-link">
+        <i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard
+        </a>
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group pull-right">
+        <a routerLink="/restaurant/edit/{{ id }}" class="btn btn-dark">
+            Edit
+        </a>
+        <button (click)="onDeleteClick()" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+    <hr> 
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngIf="restaurant" class="card">
+                <h3 class="card-header">{{ restaurant.name }} - {{ restaurant.township }}</h3>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="cold-md-8 col-sm-6">
+                            <h4>Retaurant ID: {{ restaurant.id }}</h4>
+                        </div>
+                        <div class="cold-md-8 col-sm-6">
+                            <div class="btn-group pull-right">
+                                <button (click)="onDeleteClick()" class="btn btn-dark">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <ul class="list-group">
+                        <li class="list-group-item">Contact Email: {{ restaurant.email }}</li>
+                        <li class="list-group-item">Contact Phone: {{ restaurant.phone }}</li>
+                        <li class="list-group-item">Address: {{ restaurant.address }}</li>
+                        <li class="list-group-item">Delivery: {{ restaurant.delivery }}</li>
+                        <li class="list-group-item">User: {{ restaurant.user }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="restaurant" class="card">
+                <h3 class="card-header">Menu</h3>
+                <div class="card-body">
+                    <ul class="list-group" *ngFor="let m of menu">
+                        <li class="list-group-item">{{m.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
