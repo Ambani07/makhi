@@ -48,4 +48,9 @@ export class RestaurantsService {
       newRestaurant(restaurant: Restaurants): void {
         this.restaurantsCollection.add(restaurant);
       }
+
+      updateRestaurant(restaurants: Restaurants): void {
+        this.restaurantDoc = this.afs.doc(`restaurants/${restaurants.id}`);
+        this.restaurantDoc.update(restaurants);
+      }
 }

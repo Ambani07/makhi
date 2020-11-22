@@ -3,4 +3,5 @@ export interface Address {
     city?: string;
     province?: string;
     postal_code?: string;
+    township?: string;
 }
