@@ -9,7 +9,6 @@
       <th>Name</th>
       <th>Phone</th>
       <th>Email</th>
-      <th>Address</th>
       <th>Delivery</th>
       <th>User</th>
       <th>Created At</th>
@@ -19,9 +18,8 @@
   <tbody>
     <tr *ngFor="let restaurant of rataurants">
       <td>{{restaurant.name}}</td>
-      <td>{{restaurant.phone}}</td>
+      <td>{{restaurant.phone_number}}</td>
       <td>{{restaurant.email}}</td>
-      <td>{{restaurant.address}}</td>
       <td>{{restaurant.delivery}}</td>
       <td>{{restaurant.user}}</td>
       <td>{{restaurant.created_at}}</td>
@@ -30,3 +28,4 @@
   </tbody>
 </table>
 <hr/>
+<p *ngIf="!rataurants">There no rataurants in the system.</p>

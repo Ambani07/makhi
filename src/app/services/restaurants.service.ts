@@ -44,4 +44,8 @@ export class RestaurantsService {
         }));
         return this.restaurant;
       }
+
+      newRestaurant(restaurant: Restaurants): void {
+        this.restaurantsCollection.add(restaurant);
+      }
 }

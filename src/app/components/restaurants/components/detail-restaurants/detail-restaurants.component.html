@@ -16,8 +16,13 @@
     
     <div class="row">
         <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{{restaurant.logo}}" alt="restaurant-logo">
+                </div>
+            </div>
             <div *ngIf="restaurant" class="card">
-                <h3 class="card-header">{{ restaurant.name }} - {{ restaurant.township }}</h3>
+                <h3 class="card-header">{{ restaurant.name }} - {{ restaurant.address.township }}</h3>
                 <div class="card-body">
                     <div class="row">
                         <div class="cold-md-8 col-sm-6">
@@ -33,8 +38,19 @@
                     <hr>
                     <ul class="list-group">
                         <li class="list-group-item">Contact Email: {{ restaurant.email }}</li>
-                        <li class="list-group-item">Contact Phone: {{ restaurant.phone }}</li>
-                        <li class="list-group-item">Address: {{ restaurant.address }}</li>
+                        <li class="list-group-item">Contact Phone: {{ restaurant.phone_number }}</li>
+                        <li class="list-group-item">
+                            Address
+                            <ul class="list-group">
+                                <li class="list-group-item">Street: {{ restaurant.address.street }}</li>
+                                <li class="list-group-item">City: {{ restaurant.address.city }}</li>
+                                <li class="list-group-item">Province: {{ restaurant.address.province }}</li>
+                                <li class="list-group-item">Postal Code: {{ restaurant.address.postal_code }}</li>
+                                <li class="list-group-item">Township: {{ restaurant.address.township }}</li>
+                                <li class="list-group-item">Longitude: {{ restaurant.address.lon }}</li>
+                                <li class="list-group-item">Latitude: {{ restaurant.address.lat }}</li>
+                            </ul>
+                        </li>
                         <li class="list-group-item">Delivery: {{ restaurant.delivery }}</li>
                         <li class="list-group-item">User: {{ restaurant.user }}</li>
                     </ul>

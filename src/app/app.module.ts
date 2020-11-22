@@ -47,8 +47,7 @@ import { EditRestaurantComponent } from './components/restaurants/components/edi
 import { DetailRestaurantsComponent } from './components/restaurants/components/detail-restaurants/detail-restaurants.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MenuRestaurantsComponent } from './components/restaurants/components/menu-restaurants/menu-restaurants.component';
-
-
+import { RestaurantsSidebarComponent } from './components/restaurants/components/restaurants-sidebar/restaurants-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +68,7 @@ import { MenuRestaurantsComponent } from './components/restaurants/components/me
     EditRestaurantComponent,
     DetailRestaurantsComponent,
     MenuRestaurantsComponent,
+    RestaurantsSidebarComponent,
   ],
   imports: [
     BrowserModule,
