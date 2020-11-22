@@ -14,7 +14,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DetailRestaurantsComponent } from './components/restaurants/components/detail-restaurants/detail-restaurants.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
-
+import { AddRestaurantComponent } from './components/restaurants/components/add-restaurant/add-restaurant.component';
+import { EditRestaurantComponent } from './components/restaurants/components/edit-restaurant/edit-restaurant.component';
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuard]},
   {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   // restaurants
+  {path: 'restaurants/add', component: AddRestaurantComponent, canActivate: [AuthGuard]},
   {path: 'restaurants/:id', component: DetailRestaurantsComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundComponent},
 ];

@@ -25,7 +25,7 @@ export class DetailRestaurantsComponent implements OnInit {
     this.restaurantsService.getRestaurant(this.id).subscribe(restaurant => {
       this.restaurant = restaurant;
       this.menu = this.restaurant.menu;
-      console.log(this.restaurant.menu);
+      console.log(this.restaurant.logo);
     });
   }
 
