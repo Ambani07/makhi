@@ -25,12 +25,23 @@ export class DetailRestaurantsComponent implements OnInit {
     this.restaurantsService.getRestaurant(this.id).subscribe(restaurant => {
       this.restaurant = restaurant;
       this.menu = this.restaurant.menu;
-      console.log(this.restaurant.logo);
     });
   }
 
   onDeleteClick(): void {
-    console.log('delete');
+    // console.log('Delete', this.id);
+    if (confirm('Are you sure?')) {
+      this.restaurantsService.deleteRestaurant(this.restaurant);
+      this.flashMessages.show('Restaurant Deleted', {
+        cssClass: 'alert-success', timeout: 4000
+      });
+      this.router.navigate(['/']);
+      console.log(this.id);
+    }
+  }
+
+  orderNowClick(): void {
+    console.log('order now!...');
   }
 
 }

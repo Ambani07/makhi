@@ -50,7 +50,12 @@ export class RestaurantsService {
       }
 
       updateRestaurant(restaurants: Restaurants): void {
-        this.restaurantDoc = this.afs.doc(`restaurants/${restaurants.id}`);
+        this.restaurantDoc = this.afs.doc(`retaurants/${restaurants.id}`);
         this.restaurantDoc.update(restaurants);
+      }
+
+      deleteRestaurant(restaurant: Restaurants): void {
+        this.restaurantDoc = this.afs.doc(`retaurants/${restaurant.id}`);
+        this.restaurantDoc.delete();
       }
 }

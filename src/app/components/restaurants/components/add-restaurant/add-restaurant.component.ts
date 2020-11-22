@@ -27,7 +27,8 @@ export class AddRestaurantComponent implements OnInit {
       street: '',
       city: '',
       province: '',
-      postal_code: ''
+      postal_code: '',
+      township: 'Cosmo city',
     },
     menu: [],
     user: '',
