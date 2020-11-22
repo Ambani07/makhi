@@ -1,1 +1,87 @@
-<p>edit-restaurant works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard
+    </a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Edit Restaurant
+  </div>
+  <div class="card-body">
+    <form  #restaurantForm="ngForm" (ngSubmit)="onSubmit(restaurantForm)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+            type="text"
+            class="form-control"
+            name="name"
+            #restaurantName="ngModel"
+            [ngClass]="{'is-invalid':restaurantName.errors && restaurantName.touched}"
+            [(ngModel)]="restaurant.name"
+            minlength="2"
+            required
+        >
+
+        <div [hidden]="!restaurantName.errors?.required" class="invalid-feedback">
+          Name required
+        </div>
+
+        <div [hidden]="!restaurantName.errors?.minlength" class="invalid-feedback">
+            Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label for="phone_number">Phone</label>
+          <input 
+              type="text"
+              class="form-control"
+              name="phone_number"
+              #restaurantPhone="ngModel"
+              [ngClass]="{'is-invalid':restaurantPhone.errors && restaurantPhone.touched}"
+              [(ngModel)]="restaurant.phone_number"
+              minlength="10"
+              required
+          >
+  
+          <div [hidden]="!restaurantPhone.errors?.required" class="invalid-feedback">
+            Phone Number is required
+          </div>
+  
+          <div [hidden]="!restaurantPhone.errors?.minlength" class="invalid-feedback">
+              Phone Number must be 10 digits. e.g 067 134 8606
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+                type="text"
+                class="form-control"
+                name="email"
+                #restaurantEmail="ngModel"
+                [ngClass]="{'is-invalid':restaurantEmail.errors && restaurantEmail.touched}"
+                [(ngModel)]="restaurant.email"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                required
+            >
+    
+            <div [hidden]="!restaurantEmail.errors?.required" class="invalid-feedback">
+              Email required
+            </div>
+    
+            <div [hidden]="!restaurantEmail.errors?.pattern" class="invalid-feedback">
+                Email is not valid
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </form>
+  </div>
+</div>
+<p *ngIf="!restaurant">Loading...</p>
