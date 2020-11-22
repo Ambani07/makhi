@@ -37,7 +37,7 @@ export class EditRestaurantComponent implements OnInit {
       this.flashMessage.show('Restaurant updated!', {
         cssClass: 'alert-success', timeout: 4000
       });
-      this.restaurantService.newRestaurant(this.restaurant);
+      this.restaurantService.updateRestaurant(this.restaurant);
       // // redirect
       this.router.navigate(['/']);
     }

@@ -30,7 +30,7 @@
                         </div>
                         <div class="cold-md-8 col-sm-6">
                             <div class="btn-group pull-right">
-                                <button (click)="onDeleteClick()" class="btn btn-dark">Order Now</button>
+                                <button (click)="orderNowClick()" class="btn btn-dark">Order Now</button>
                             </div>
                         </div>
                     </div>
@@ -69,3 +69,5 @@
         </div>
     </div>
 </div>
+
+<p *ngIf="!restaurant" >Loading...</p>
